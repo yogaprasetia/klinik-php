@@ -54,7 +54,7 @@
                         <?php echo $ambil_data['tempat_lahir'];  ?>
                     </td>
                     <td>
-                        <?php echo date('d-m-Y',strtotime($ambil_data['tgl_lahir']));  ?>
+                        <?php echo $ambil_data['tgl_lahir'];  ?>
                     </td>
                     <td>
                         <?php echo $ambil_data['alamat'];  ?>
@@ -72,7 +72,7 @@
                         <a href="edit_pasien.php?nik=<?php echo $ambil_data['nik'];?>">
                             <button type="button" class="btn btn-warning">Edit</button>
                         </a>
-                        <a href="proses_pasien.php?nik=<?php echo $ambil_data['nik'];?>" onclick="return confirm ('Data akan dihapus?')">
+                        <a href="proses_data_pasien.php?nik=<?php echo $ambil_data['nik'];?>" onclick="return confirm ('Data akan dihapus?')">
                             <button type="button" class="btn btn-danger">Hapus</button>
                         </a>
                     </td>

@@ -33,9 +33,9 @@
                 <?php
 					if(isset($_POST['pencarian'])){
                     	$kata_kunci = $_POST['kata_kunci'];
-                        $query = mysqli_query($config,"SELECT * from pasien where nama like '%$kata_kunci%'");
+                        $query = mysqli_query($config,"SELECT * from rekam_medis where nama like '%$kata_kunci%'");
                 	}else{
-                    	$query=mysqli_query($config,"select * from pasien");
+                    	$query=mysqli_query($config,"select * from rekam_medis");
                 	}
                     $nomer=1;
                     while ($ambil_data=mysqli_fetch_array($query)){
@@ -57,10 +57,10 @@
                         <?php echo $ambil_data['keluhan'];  ?>
                     </td>
                     <td>
-                        <?php echo date('d-m-Y',strtotime($ambil_data['tgl_daftar']));  ?>
+                        <?php echo $ambil_data['tgl_daftar'];  ?>
                     </td>
                     <td>
-                        <?php echo date('d-m-Y',strtotime($ambil_data['tgl_janji']));  ?>
+                        <?php echo $ambil_data['tgl_janji'];  ?>
                     </td>
                     <td>
                         <?php echo $ambil_data['no_hp'];  ?>

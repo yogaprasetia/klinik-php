@@ -38,14 +38,31 @@
       <h2 class="display-3">Selamat Datang di Klinik Tong Fang</h2>
       <p>Melayani Sepenuh Hati</p>
       <p><a class="btn btn-primary btn-lg" href="registrasi.php" role="button">Pendaftaran Pasien Baru &raquo;</a></p>
-      <p><a class="btn btn-light btn-lg" href="registrasilama.php" role="button">Pendaftaran Pasien Lama &raquo;</a></p>
+      <p><a class="btn btn-light btn-lg" href="registrasi_lama.php" role="button">Pendaftaran Pasien Lama &raquo;</a></p>
     </div>
   </div>
 
- 
+  </div>
+    <div class="row">
+        <div class="container text-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lihat Jadwal Praktek Dokter</h5>
+                    <p class="card-text">Jumlah Dokter
+                        <strong>
+                            <?php  
+                              $query=mysqli_query($config,"select * from dokter");
+                              echo mysqli_num_rows($query);
+                            ?>
+                        </strong>
+                    </p>
+                    <a href="jadwal_praktek.php" class="btn btn-dark">Lihat Disini</a>
+                </div>
+            </div>
+        </div>
 </main>
 
-<footer class="container">
-  <p>&copy; 2020</p>
+<footer class="container text-center">
+  <p>&copy;Pemrograman Web 2020</p>
 </footer>
 </html>

@@ -4,7 +4,7 @@ function auto_kode(){
     include 'koneksi.php';
     $num    = '';
     $prefix = 'RM';
-    $query  = "SELECT MAX(id) AS kode FROM pasien";
+    $query  = "SELECT MAX(id) AS kode FROM rekam_medis";
     $run    = mysqli_query($config,$query);
     $data   = mysqli_fetch_array($run);
     $row    = mysqli_fetch_row($run);

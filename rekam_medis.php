@@ -5,7 +5,6 @@
     <h5 class="card-header">Data Pasien</h5>
     <div class="card-body">
         <div class="form-group">
-            <a href="registrasi.php" class="btn btn-primary">Tambah Pasien</a>
             <a href="laporan_pasien.php" class="btn btn-secondary" target="_blank">Cetak Laporan</a>
             <div class="float-right">
                 <form method="POST" class="form-inline">
@@ -67,17 +66,11 @@
                         <?php echo $ambil_data['no_hp'];  ?>
                     </td>
                     <td>
-                        <a href="cetak_pasien.php?nik=<?php echo $ambil_data['nik'];?>" target="_blank">
+                        <a href="cetak_rekam.php?nik=<?php echo $ambil_data['nik'];?>" target="_blank">
                             <button type="button" class="btn btn-secondary">Cetak</button>
                         </a>
-                        <a href="detail_pasien.php?nik=<?php echo $ambil_data['nik'];?>">
+                        <a href="detail_rekam.php?nik=<?php echo $ambil_data['nik'];?>">
                             <button type="button" class="btn btn-success">Detail</button>
-                        </a>
-                        <a href="edit_pasien.php?nik=<?php echo $ambil_data['nik'];?>">
-                            <button type="button" class="btn btn-warning">Edit</button>
-                        </a>
-                        <a href="proses_pasien.php?nik=<?php echo $ambil_data['nik'];?>" onclick="return confirm ('Data akan dihapus?')">
-                            <button type="button" class="btn btn-danger">Hapus</button>
                         </a>
                     </td>
                 </tr>

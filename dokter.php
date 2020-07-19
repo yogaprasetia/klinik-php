@@ -59,16 +59,16 @@
                         <?php echo $ambil_data['jam_praktek'];  ?>
                     </td>
                     <td>
-                        <a href="cetak_pasien.php?nik=<?php echo $ambil_data['nip'];?>" target="_blank">
+                        <a href="cetak_dokter.php?nip=<?php echo $ambil_data['nip'];?>" target="_blank">
                             <button type="button" class="btn btn-secondary">Cetak</button>
                         </a>
-                        <a href="detail_pasien.php?nik=<?php echo $ambil_data['nip'];?>">
+                        <a href="detail_dokter.php?nip=<?php echo $ambil_data['nip'];?>">
                             <button type="button" class="btn btn-success">Detail</button>
                         </a>
-                        <a href="edit_pasien.php?nik=<?php echo $ambil_data['nip'];?>">
+                        <a href="edit_dokter.php?nip=<?php echo $ambil_data['nip'];?>">
                             <button type="button" class="btn btn-warning">Edit</button>
                         </a>
-                        <a href="proses_pasien.php?nik=<?php echo $ambil_data['nip'];?>" onclick="return confirm ('Data akan dihapus?')">
+                        <a href="proses_data_dokter.php?nip=<?php echo $ambil_data['nip'];?>" onclick="return confirm ('Data akan dihapus?')">
                             <button type="button" class="btn btn-danger">Hapus</button>
                         </a>
                     </td>

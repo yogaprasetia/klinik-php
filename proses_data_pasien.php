@@ -12,7 +12,7 @@
 		$query=mysqli_query($config,"insert into pasien values ('$nik','$nama','$tempat_lahir','$tgl_lahir','$alamat','$no_hp')");
 		echo "
 				<script>
-					alert('Data Siswa Berhasil Disimpan');
+					alert('Data Pasien Berhasil Disimpan');
 					window.location.href = 'pasien.php';
 				</script>";
 	}elseif($proses=="edit"){
@@ -23,7 +23,7 @@
 		}
 		echo "
 				<script>
-					alert('Data Siswa Berhasil Diedit');
+					alert('Data Pasien Berhasil Diedit');
 					window.location.href = 'pasien.php';
 				</script>";
 	}else{

@@ -78,7 +78,7 @@ function auto_kode(){
                               <div class="form-group row">
                                   <label for="nik" class="col-md-4 col-form-label text-md-right">NIK</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="nik" class="form-control" name="nik" onkeyup="auto_detek()" required autofocus placeholder="Masukkan NIK yang terdaftar">
+                                      <input type="number" id="nik" class="form-control" name="nik" onkeyup="auto_detek()" required autofocus placeholder="Masukkan NIK yang terdaftar">
                                   </div>
                               </div>
                               <div class="form-group row">

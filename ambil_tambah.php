@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_POST['Submit'])) {
     $id = $_POST['id'];
     $nik = $_POST['nik'];
@@ -12,12 +11,16 @@ if(isset($_POST['Submit'])) {
     $tgl_daftar = $_POST['tgl_daftar'];
     $tgl_janji = $_POST['tgl_janji'];
     $no_hp = $_POST['no_hp'];
-    $password = $_POST['password'];
+    $pass=md5($_POST['pass']);
 
     include_once("koneksi.php");
 
-    $ambil=mysqli_query ($config,"INSERT INTO `rekam_medis` (`id`, `nik`, `nama`, `tempat_lahir`, `tgl_lahir`, `alamat`, `keluhan`, `poli`,`tgl_daftar`, `tgl_janji`, `no_hp`, `password`) VALUES ('$id', '$nik', '$nama', '$tempat_lahir', '$tgl_lahir', '$alamat', '$keluhan', '$poli','$tgl_daftar', '$tgl_janji', '$no_hp','$password')");
-    $query=mysqli_query($config,"select * from rekam_medis");
+    $ambil=mysqli_query ($config,"INSERT INTO `pasien` (`id`, `nik`, `nama`, `tempat_lahir`, `tgl_lahir`, `alamat`, `keluhan`, `poli`,`tgl_daftar`, `tgl_janji`, `no_hp`, `pass`) VALUES ('$id', '$nik', '$nama', '$tempat_lahir', '$tgl_lahir', '$alamat', '$keluhan', '$poli','$tgl_daftar', '$tgl_janji', '$no_hp','$pass')");
+        if ($ambil == 1)
+    {
+      $ambil=mysqli_query ($config,"INSERT INTO `rekam_medis` (`id`, `nik`, `nama`, `tempat_lahir`, `tgl_lahir`, `alamat`, `keluhan`, `poli`,`tgl_daftar`, `tgl_janji`, `no_hp`) VALUES ('$id', '$nik', '$nama', '$tempat_lahir', '$tgl_lahir', '$alamat', '$keluhan', '$poli','$tgl_daftar', '$tgl_janji', '$no_hp')");
+    }
+    $query=mysqli_query($config,"SELECT * FROM `pasien` WHERE id IN (SELECT MAX(id) FROM `pasien`)");
     $ambil_data=mysqli_fetch_array($query);
 }
 ?>
@@ -56,9 +59,12 @@ if(isset($_POST['Submit'])) {
   <h4 class="alert-heading">Berhasil!</h4>
   <p>Pendaftaran pasien telah berhasil, cetak kartu sekarang!</p>
   </div>
-  <a href="cetak_lama.php?id=<?php echo $ambil_data['id'];?>" target="_blank">
+  <div class="form-group text-center">
+  <a href="cetak_daftar.php?id=<?php echo $ambil_data['id'];?>" target="_blank">
   <button type="button" class="btn btn-primary">Cetak</button>
   </a>
+  <a href="tambah_dokter.php" class="btn btn-secondary">Kembali</a>
+  </div>
 </div>
 </div>
 </div>

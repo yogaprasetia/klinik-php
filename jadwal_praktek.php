@@ -76,6 +76,9 @@
                 ?>
             </tbody>
         </table>
+        <div class="form-group text-right">
+        <a href="index.php" class="btn btn-secondary">Kembali</a>
+        </div>
     </div>
 </div>
 </body>

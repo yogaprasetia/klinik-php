@@ -1,7 +1,7 @@
 <?php
 	  include("koneksi.php");
-	  $nik=$_GET['nik'];
-	  $query=mysqli_query($config,"select * from pasien where nik='$nik'");
+	  $id=$_GET['id'];
+	  $query=mysqli_query($config,"SELECT * FROM `pasien` WHERE id IN (SELECT MAX(id) FROM `pasien`)");
 	  $ambil_data=mysqli_fetch_array($query);
 ?>
 <!DOCTYPE>

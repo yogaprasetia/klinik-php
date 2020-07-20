@@ -51,15 +51,24 @@ function auto_kode(){
 </nav>
 <br>
 <br>
-
     <div class="container">
         <br><br>
           <div class="row justify-content-center">
               <div class="col-md-8">
                   <div class="card">
+                  <?php
+                  if (isset($_GET['error'])) : ?>
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                  <strong>Perhatian!</strong>
+                  <?=base64_decode($_GET['error']);?>
+                  </div>
+                  <?php endif;?>
                       <div class="card-header">Form Pendaftaran Pasien</div>
                       <div class="card-body">
-                          <form action="ambil_lama.php" method="post">
+                          <form action="konek.php" method="post">
                           <div class="form-group row">
                                   <label for="id" class="col-md-4 col-form-label text-md-right">No. Rekam Medis</label>
                                   <div class="col-md-6">
@@ -69,19 +78,19 @@ function auto_kode(){
                               <div class="form-group row">
                                   <label for="nik" class="col-md-4 col-form-label text-md-right">NIK</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="nik" class="form-control" name="nik" onkeyup="auto_detek()" required autofocus>
+                                      <input type="text" id="nik" class="form-control" name="nik" onkeyup="auto_detek()" required autofocus placeholder="Masukkan NIK yang terdaftar">
                                   </div>
                               </div>
                               <div class="form-group row">
                                   <label for="nama" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="nama" class="form-control" name="nama" required autofocus readonly>
+                                      <input type="text" id="nama" class="form-control" name="nama" required autofocus readonly placeholder="Nama Terdaftar">
                                   </div>
                               </div>
                               <div class="form-group row">
                                 <label for="keluhan" class="col-md-4 col-form-label text-md-right">Keluhan</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="keluhan" class="form-control" name="keluhan" required autofocus>
+                                <textarea class="form-control" name="keluhan" id="keluhan" cols="10" rows="10" required placeholder="Jelaskan Keluhan Anda"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -109,17 +118,18 @@ function auto_kode(){
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password Anda</label>
+                                <label for="pass" class="col-md-4 col-form-label text-md-right">Password Anda</label>
                                 <div class="col-md-6">
-                                    <input type="password" id="password" class="form-control" name="password" required autofocus>
+                                    <input type="password" id="pass" class="form-control" name="pass" required autofocus placeholder="Masukkan Password Terdaftar">
                                 </div>
                             </div>
                             <input type="hidden" id="alamat" class="form-control" name="alamat" required autofocus>
                             <input type="hidden" id="tgl_lahir" class="form-control" name="tgl_lahir" required autofocus>
                             <input type="hidden" id="tempat_lahir" class="form-control" name="tempat_lahir" required autofocus>
                             <input type="hidden" id="no_hp" class="form-control" name="no_hp" required autofocus>
-                            <div class="col-md-6 offset-md-4">
+                            <div class="form-group text-center">
                             <input type="submit" name="Submit" class="btn btn-primary" value="Daftar">
+                              <a href="index.php" class="btn btn-secondary">Kembali</a>
                             </div>
                       </div>
                       </form>

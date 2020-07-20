@@ -51,8 +51,9 @@
                                     </select>
                                 </div>
                             </div>
-                              <div class="col-md-6 offset-md-4">
-                              <input type="submit" name="Submit" class="btn btn-primary" value="Tambah">
+                            <div class="form-group text-center">
+                              <input type="submit" name="Submit" class="btn btn-primary" value="Daftar">
+                              <a href="dokter.php" class="btn btn-secondary">Kembali</a>
                               </div>
                       </div>
                       </form>

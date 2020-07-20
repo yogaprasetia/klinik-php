@@ -2,10 +2,10 @@
     include("header.php");
 ?>
 <div class="card">
-    <h5 class="card-header">Data Pasien</h5>
+    <h5 class="card-header">Data Rekam Medis Pasien</h5>
     <div class="card-body">
         <div class="form-group">
-            <a href="laporan_pasien.php" class="btn btn-secondary" target="_blank">Cetak Laporan</a>
+            <a href="laporan_rekam.php" class="btn btn-secondary" target="_blank">Cetak Laporan</a>
             <div class="float-right">
                 <form method="POST" class="form-inline">
                     <div class="form-group mx-sm-3 mb-2">
@@ -66,10 +66,10 @@
                         <?php echo $ambil_data['no_hp'];  ?>
                     </td>
                     <td>
-                        <a href="cetak_rekam.php?nik=<?php echo $ambil_data['nik'];?>" target="_blank">
+                        <a href="cetak_rekam.php?id=<?php echo $ambil_data['id'];?>" target="_blank">
                             <button type="button" class="btn btn-secondary">Cetak</button>
                         </a>
-                        <a href="detail_rekam.php?nik=<?php echo $ambil_data['nik'];?>">
+                        <a href="detail_rekam.php?id=<?php echo $ambil_data['id'];?>">
                             <button type="button" class="btn btn-success">Detail</button>
                         </a>
                     </td>

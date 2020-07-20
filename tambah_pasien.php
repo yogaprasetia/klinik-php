@@ -29,7 +29,7 @@ function auto_kode(){
                   <div class="card">
                       <div class="card-header">Tambah Pasien Baru</div>
                       <div class="card-body">
-                          <form action="ambil.php" method="post">
+                      <form action="ambil_tambah.php" method="post">
                           <div class="form-group row">
                                   <label for="id" class="col-md-4 col-form-label text-md-right">No. Rekam Medis</label>
                                   <div class="col-md-6">
@@ -39,19 +39,19 @@ function auto_kode(){
                               <div class="form-group row">
                                   <label for="nik" class="col-md-4 col-form-label text-md-right">NIK</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="nik" class="form-control" name="nik" required autofocus>
+                                      <input type="number" id="nik" class="form-control" name="nik" required autofocus placeholder="Masukkan NIK Anda">
                                   </div>
                               </div>
                               <div class="form-group row">
                                   <label for="nama" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="nama" class="form-control" name="nama" required autofocus>
+                                      <input type="text" id="nama" class="form-control" name="nama" required autofocus placeholder="Masukkan Nama Lengkap Anda">
                                   </div>
                               </div>
                               <div class="form-group row">
                                   <label for="tempat_lahir" class="col-md-4 col-form-label text-md-right">Tempat Lahir</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="tempat_lahir" class="form-control" name="tempat_lahir" required autofocus>
+                                      <input type="text" id="tempat_lahir" class="form-control" name="tempat_lahir" required autofocus placeholder="Masukkan Tempat Lahir Anda">
                                   </div>
                               </div>
                               <div class="form-group row">
@@ -63,13 +63,13 @@ function auto_kode(){
                               <div class="form-group row">
                                   <label for="alamat" class="col-md-4 col-form-label text-md-right">Alamat</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="alamat" class="form-control" name="alamat" required autofocus>
+                                      <input type="text" id="alamat" class="form-control" name="alamat" required autofocus placeholder="Masukkan Alamat Anda">
                                   </div>
                               </div>
                               <div class="form-group row">
                                 <label for="keluhan" class="col-md-4 col-form-label text-md-right">Keluhan</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="keluhan" class="form-control" name="keluhan" required autofocus>
+                                <textarea class="form-control" name="keluhan" id="keluhan" cols="10" rows="10" required placeholder="Jelaskan Keluhan Anda"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -83,7 +83,6 @@ function auto_kode(){
                                     </select>
                                 </div>
                             </div>
-
                             <div class="form-group row">
                                 <label for="tgl_daftar" class="col-md-4 col-form-label text-md-right">Tanggal Daftar</label>
                                 <div class="col-md-6">
@@ -99,19 +98,19 @@ function auto_kode(){
                             <div class="form-group row">
                                 <label for="no_hp" class="col-md-4 col-form-label text-md-right">No HP/WA</label>
                                 <div class="col-md-6">
-                                    <input type="tel" id="no_hp" class="form-control" name="no_hp" required autofocus>
+                                    <input type="tel" id="no_hp" class="form-control" name="no_hp" required autofocus placeholder="Masukkan No HP/WA yang Valid">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="no_hp" class="col-md-4 col-form-label text-md-right">Password Baru</label>
-                                <div class="col-md-6">
-                                    <input type="password" id="no_hp" class="form-control" name="password" required autofocus>
-                                </div>
-                            </div>
-                              <div class="col-md-6 offset-md-4">
-                              <input type="submit" name="Submit" class="btn btn-primary" value="Daftar">
+                                  <label for="pass" class="col-md-4 col-form-label text-md-right">Password</label>
+                                  <div class="col-md-6">
+                                      <input type="password" id="pass" class="form-control" name="pass" required autofocus placeholder="Masukkan Password Baru">
+                                  </div>
                               </div>
-                      </div>
+                              <div class="form-group text-center">
+                              <input type="submit" name="Submit" class="btn btn-primary" value="Daftar">
+                              <a href="pasien.php" class="btn btn-secondary">Kembali</a>
+                              </div>
                       </form>
                   </div>
               </div>
